@@ -1,0 +1,58 @@
+.Question {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  &__Text {
+    display: flex;
+    flex: 1;
+    color: $Secondary;
+    align-items: center;
+
+    span {
+      color: $Primary;
+    }
+  }
+
+  &__Images {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    &__Actor {
+      img {
+        border-radius: 15px 0 0 15px;
+        width: 100%;
+        height: 90%;
+      }
+    }
+
+    &__Movie {
+      img {
+        border-radius: 0 15px 15px 0;
+        width: 100%;
+        height: 90%;
+      }
+    }
+  }
+
+  &__Answer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    &__Icon {
+      cursor: pointer;
+      img {
+        width: 90px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.LoadingImg {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    border-radius: 30px;
+  }
+}
