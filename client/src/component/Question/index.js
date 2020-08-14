@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import FalseIcon from "../../static/icons/false.png";
 import TrueIcon from "../../static/icons/true.png";
 
-function Question({ actor, movie }) {
+function Question({ actor, movie, handleResultClick }) {
   return (
     <div className="Question">
       <div className="Question__Text">
@@ -27,11 +27,19 @@ function Question({ actor, movie }) {
         </div>
       </div>
       <div className="Question__Answer">
-        <div className="Question__Answer__Icon ">
-          <img alt="False Icon" src={FalseIcon} />
+        <div className="Question__Answer__Icon Question__Answer__False">
+          <img
+            alt="False Icon"
+            src={FalseIcon}
+            onClick={() => handleResultClick(false)}
+          />
         </div>
-        <div className="Question__Answer__Icon">
-          <img alt="False Icon" src={TrueIcon} />
+        <div className="Question__Answer__Icon Question__Answer__True">
+          <img
+            alt="False Icon"
+            src={TrueIcon}
+            onClick={() => handleResultClick(true)}
+          />
         </div>
       </div>
     </div>

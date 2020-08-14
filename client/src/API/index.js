@@ -6,3 +6,21 @@ export async function newQuestion() {
   if (response.status !== 200) throw Error(result.message);
   return result;
 }
+
+export async function checkQuestionResult(actorId, movieId) {
+  const response = await fetch("/api/question/answer", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      movieId,
+      actorId,
+    }),
+  });
+  const result = await response.json();
+  if (response.status !== 200) throw Error(result.message);
+
+  return result;
+}

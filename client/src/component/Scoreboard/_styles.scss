@@ -1,0 +1,22 @@
+.Scoreboard {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  &__Score {
+    color: $Secondary;
+    span {
+      color: $Primary;
+    }
+  }
+
+  &__CurrentScore {
+    padding-right: 20px;
+    border-right: 2px $Secondary solid;
+  }
+
+  &__HighestScore {
+    padding-left: 20px;
+  }
+}

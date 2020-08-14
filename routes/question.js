@@ -124,12 +124,12 @@ router.get("/question", async (req, res) => {
 });
 
 router.post("/question/answer", async (req, res) => {
-  const movieId = req.body.movieId;
   const actorId = req.body.actorId;
+  const movieId = req.body.movieId;
 
   const isOnMovie = await isOnCreditCast(actorId, movieId);
 
-  res.json(isOnMovie);
+  res.send(isOnMovie);
 });
 
 module.exports = router;
