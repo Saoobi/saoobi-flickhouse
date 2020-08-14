@@ -6,7 +6,7 @@ function Timer({ startTime, handleTimerEnd }) {
 
   useEffect(() => {
     const timeLeft = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
-    timer == 0 && handleTimerEnd();
+    timer === 0 && handleTimerEnd();
 
     return () => clearInterval(timeLeft);
   }, [timer]);

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { newQuestion, checkQuestionResult } from "../../API/";
 import HomeButton from "../../component/HomeButton";
@@ -8,12 +9,23 @@ import Scoreboard from "../../component/Scoreboard";
 import Timer from "../../component/Timer";
 
 function Game() {
+  const history = useHistory();
+
   const [isSearching, setIsSearching] = useState(false);
   const [actor, setActor] = useState({});
   const [movie, setMovie] = useState({});
 
   const [currentScore, setCurrentScore] = useState(0);
-  const [highestScore, setHighestScore] = useState(0);
+  const [highestScore, setHighestScore] = useState(
+    sessionStorage.getItem("highestScore") || 0
+  );
+
+  useEffect(() => {
+    if (currentScore > highestScore) {
+      setHighestScore(currentScore);
+      sessionStorage.setItem("highestScore", currentScore);
+    }
+  }, [currentScore]);
 
   function getQuestion() {
     setIsSearching(true);
@@ -27,26 +39,33 @@ function Game() {
     getQuestion();
   }, []);
 
+  function redirectEndGame(score) {
+    history.push({
+      pathname: "/gameover",
+      state: { currentScore: currentScore },
+    });
+  }
+
   function handleResultClick(answer) {
     checkQuestionResult(actor.id, movie.id).then((result) => {
-      if (result == answer) {
+      if (result === answer) {
         setCurrentScore(currentScore + 1);
         getQuestion();
       } else {
         //Call Game Over Screen
-        console.log("t'as faux!");
+        redirectEndGame();
       }
     });
   }
 
   function handleTimerEnd() {
-    console.log("end");
+    redirectEndGame();
   }
 
   return (
     <div className="Game">
       <HomeButton />
-      <Timer startTime="60" handleTimerEnd={handleTimerEnd} />
+      <Timer startTime={60} handleTimerEnd={handleTimerEnd} />
       {isSearching ? (
         <Loader />
       ) : (
@@ -56,7 +75,10 @@ function Game() {
           handleResultClick={handleResultClick}
         />
       )}
-      <Scoreboard currentScore={currentScore} highestScore={highestScore} />
+      <Scoreboard
+        currentScore={currentScore}
+        highestScore={parseInt(highestScore)}
+      />
     </div>
   );
 }
