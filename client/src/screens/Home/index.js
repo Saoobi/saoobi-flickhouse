@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import FlickHouseImage from "../../static/images/flickhouse.png";
 import ClapperboardIcon from "../../static/icons/clapperboard.png";
+
 function Home() {
   return (
     <div className="Home">

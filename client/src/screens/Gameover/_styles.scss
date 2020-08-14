@@ -1,0 +1,58 @@
+.Gameover {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  &__Title {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    &__Text {
+      color: $Primary;
+      font-size: 45px;
+    }
+  }
+
+  &__Score {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 55px;
+    p {
+      color: $Secondary;
+      font-size: 23px;
+      span {
+        color: $Primary;
+      }
+    }
+  }
+
+  &__RetryButton {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    bottom: 39px;
+    &__Image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        width: 200px;
+      }
+      p {
+        font-size: 32px;
+        color: $Primary;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+}
