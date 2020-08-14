@@ -17,13 +17,13 @@ function Game() {
 
   const [currentScore, setCurrentScore] = useState(0);
   const [highestScore, setHighestScore] = useState(
-    sessionStorage.getItem("highestScore") || 0
+    localStorage.getItem("highestScore") || 0
   );
 
   useEffect(() => {
     if (currentScore > highestScore) {
       setHighestScore(currentScore);
-      sessionStorage.setItem("highestScore", currentScore);
+      localStorage.setItem("highestScore", currentScore);
     }
   }, [currentScore]);
 

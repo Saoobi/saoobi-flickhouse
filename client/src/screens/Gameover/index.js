@@ -10,7 +10,7 @@ function GameOver() {
   const params = location.state;
 
   const currentScore = params.currentScore;
-  const highestScore = sessionStorage.getItem("highestScore") || 0;
+  const highestScore = localStorage.getItem("highestScore") || 0;
   return (
     <div className="Gameover">
       <HomeButton />
