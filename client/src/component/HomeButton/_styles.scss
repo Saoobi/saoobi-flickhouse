@@ -1,0 +1,15 @@
+.HomeButton {
+  margin-left: 20px;
+  margin-top: 20px;
+  img {
+    width: 65px;
+    height: 80px;
+    cursor: pointer;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  }
+}

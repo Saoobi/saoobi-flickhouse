@@ -1,0 +1,20 @@
+.Timer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  &__Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: 2px $Secondary solid;
+    border-radius: 50%;
+
+    &__Text {
+      color: $Primary;
+    }
+  }
+}
