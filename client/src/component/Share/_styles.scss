@@ -1,0 +1,25 @@
+.Share {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 70px;
+
+  &__Text {
+    color: $Secondary;
+  }
+
+  &__Content {
+    display: flex;
+    &__Button {
+      display: flex;
+      margin: 0 10px 0 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+}
