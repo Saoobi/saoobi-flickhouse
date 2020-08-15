@@ -31,10 +31,9 @@
 
   &__RetryButton {
     display: flex;
-    flex: 3;
+    flex: 2;
     justify-content: center;
     align-items: center;
-    bottom: 39px;
     &__Image {
       display: flex;
       flex-direction: column;
@@ -54,5 +53,12 @@
         transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
+  }
+
+  &__Share {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
   }
 }

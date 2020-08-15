@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import ClapperboardIcon from "../../static/icons/clapperboard.png";
 import HomeButton from "../../component/HomeButton";
+import Share from "../../component/Share";
 
 function GameOver() {
   const location = useLocation();
@@ -35,6 +36,9 @@ function GameOver() {
           <img alt="Clapperboard icon" src={ClapperboardIcon} />
           <p>Try again !</p>
         </Link>
+      </div>
+      <div className="Gameover__Share">
+        <Share score={highestScore} />
       </div>
     </div>
   );

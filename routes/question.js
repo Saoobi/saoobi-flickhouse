@@ -108,7 +108,6 @@ router.get("/question", async (req, res) => {
 
   //Get a true or false question
   const answerExpected = getRandomBoolean();
-  console.log(answerExpected);
 
   //Get a random movie (popular)
   const movie = await randomMovie();
