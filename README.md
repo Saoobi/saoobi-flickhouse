@@ -1,5 +1,8 @@
 # saoobi-flickhouse
 
+## Figma
+https://www.figma.com/file/xWKmQFz7CGEfaNvTyYrG6f/FlickHouse?node-id=0%3A1
+
 ## Setup
 
 ```sh
